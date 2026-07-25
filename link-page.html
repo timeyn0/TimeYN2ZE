@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Links</title>
+
+<!--
+  ============================================
+  วิธีใช้งาน
+  ============================================
+  1) แก้ชื่อเพจ / โลโก้ ในส่วน <header> ด้านล่าง
+  2) แก้ลิงก์โซเชียลในส่วน .social-icons (href="...")
+  3) เพิ่ม/ลบ "แบนเนอร์" แต่ละอันได้ในส่วน .banner-list
+     - รูปแต่ละอัน = <a href="ลิงก์ปลายทาง"><img src="รูปของคุณ"></a>
+     - สามารถ copy บล็อก <a class="banner">...</a> ซ้ำเพื่อเพิ่มรูปได้เรื่อยๆ
+  ============================================
+-->
+
+<style>
+  :root{
+    --bg:#eef4fb;
+    --card:#ffffff;
+    --text:#1c1c1c;
+    --muted:#6b7a8f;
+    --accent:#2196f3;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#0a1626 url("images/bg1.jpg") center / cover no-repeat fixed;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Sarabun",sans-serif;
+    color:var(--text);
+    display:flex;
+    justify-content:center;
+  }
+  .page{
+    width:100%;
+    max-width:480px;
+    background:rgba(255,255,255,0.88);
+    backdrop-filter:blur(6px);
+    -webkit-backdrop-filter:blur(6px);
+    min-height:100vh;
+    box-shadow:0 0 60px rgba(0,0,0,0.5);
+  }
+
+  /* ---- logo / header title ---- */
+  .brand{
+    text-align:center;
+    padding:60px 20px;
+    background:linear-gradient(rgba(255,255,255,0.75),rgba(255,255,255,0.75)), url("images/bg2.jpg") center / cover no-repeat;
+    border-bottom:1px solid #dceaff;
+  }
+  .brand h1{
+    font-size:32px;
+    font-weight:700;
+    letter-spacing:1px;
+  }
+  .brand p{
+    color:var(--muted);
+    font-size:13px;
+    margin-top:6px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+  }
+
+  /* ---- banner list ---- */
+  .banner-list{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+    padding:0 16px 32px;
+  }
+  .banner{
+    display:block;
+    position:relative;
+    border-radius:12px;
+    overflow:hidden;
+    text-decoration:none;
+    box-shadow:0 4px 16px rgba(0,0,0,0.08);
+    transition:transform .15s ease, box-shadow .2s ease;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .banner:hover{
+    transform:scale(1.015);
+    box-shadow:0 8px 24px rgba(33,150,243,0.25);
+  }
+  .banner:active{
+    transform:scale(0.97);
+  }
+  .banner .ripple{
+    position:absolute;
+    border-radius:50%;
+    background:rgba(33,150,243,0.35);
+    transform:scale(0);
+    animation:ripple-anim .55s ease-out forwards;
+    pointer-events:none;
+  }
+  @keyframes ripple-anim{
+    to{
+      transform:scale(3.5);
+      opacity:0;
+    }
+  }
+  .banner img{
+    display:block;
+    width:100%;
+    height:auto;
+  }
+  .banner-label{
+    position:absolute;
+    bottom:12px;
+    left:12px;
+    background:rgba(13,71,161,0.75);
+    color:#fff;
+    font-size:13px;
+    padding:6px 12px;
+    border-radius:20px;
+    backdrop-filter:blur(2px);
+  }
+
+  /* ---- icon-style banner (for Discord / Donate etc.) ---- */
+  .banner-icon{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    padding:18px 20px;
+    background:linear-gradient(135deg,#e8f2ff,#ffffff);
+    border:1px solid #dceaff;
+  }
+  .banner-icon .icon-circle{
+    flex:none;
+    width:52px;
+    height:52px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    transition:transform .2s ease;
+  }
+  .banner:hover .icon-circle{
+    transform:rotate(-6deg) scale(1.08);
+  }
+  .banner-icon .icon-circle svg{
+    width:26px;
+    height:26px;
+  }
+  .banner-icon .icon-text{
+    flex:1;
+  }
+  .banner-icon .icon-text .title{
+    font-size:16px;
+    font-weight:700;
+    color:var(--text);
+  }
+  .banner-icon .icon-text .sub{
+    font-size:12px;
+    color:var(--muted);
+    margin-top:2px;
+  }
+  .banner-icon .chevron{
+    flex:none;
+    color:#b9c8dc;
+    font-size:20px;
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="brand">
+    <h1>TimeYN2</h1>
+    <p>Tagline here</p>
+  </div>
+
+  <div class="banner-list">
+
+    <!-- แบนเนอร์ที่ 1: Discord -->
+    <a class="banner banner-icon" href="https://discord.gg/FY37ZD2Mz" target="_blank" rel="noopener">
+      <span class="icon-circle" style="background:#5865F2;">
+        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20.317 4.369a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.211.375-.444.864-.608 1.249a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.249.077.077 0 0 0-.079-.037 19.736 19.736 0 0 0-4.885 1.515.07.07 0 0 0-.032.027C.533 9.045-.319 13.579.099 18.057a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.099.246.198.373.291a.077.077 0 0 1-.006.128 12.3 12.3 0 0 1-1.873.892.076.076 0 0 0-.04.106c.36.699.772 1.364 1.225 1.994a.077.077 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.055c.5-5.177-.838-9.674-3.548-13.66a.061.061 0 0 0-.031-.028zM8.02 15.331c-1.183 0-2.157-1.086-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.211 0 2.176 1.096 2.157 2.42 0 1.332-.955 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.086-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.211 0 2.176 1.096 2.157 2.42 0 1.332-.946 2.418-2.157 2.418z"/>
+        </svg>
+      </span>
+      <span class="icon-text">
+        <span class="title">เข้าร่วม Discord</span>
+        <span class="sub">discord.gg/FY37ZD2Mz</span>
+      </span>
+      <span class="chevron">›</span>
+    </a>
+
+    <!-- แบนเนอร์ที่ 2: โดเนท -->
+    <a class="banner banner-icon" href="https://ezdn.app/timeyn2" target="_blank" rel="noopener">
+      <span class="icon-circle" style="background:#2196f3;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        </svg>
+      </span>
+      <span class="icon-text">
+        <span class="title">สนับสนุน / โดเนท</span>
+        <span class="sub">ezdn.app/timeyn2</span>
+      </span>
+      <span class="chevron">›</span>
+    </a>
+
+    <!-- copy บล็อกด้านบนเพื่อเพิ่มแบนเนอร์อื่นๆ ต่อได้เรื่อยๆ -->
+
+  </div>
+
+</div>
+
+<script>
+  document.querySelectorAll('.banner').forEach(function(el){
+    el.addEventListener('click', function(e){
+      const rect = el.getBoundingClientRect();
+      const size = Math.max(rect.width, rect.height);
+      const ripple = document.createElement('span');
+      ripple.className = 'ripple';
+      ripple.style.width = ripple.style.height = size + 'px';
+      ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+      ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+      el.appendChild(ripple);
+      setTimeout(function(){ ripple.remove(); }, 550);
+    });
+  });
+</script>
+
+</body>
+</html>
