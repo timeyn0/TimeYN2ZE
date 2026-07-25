@@ -92,22 +92,22 @@
   .brand{
     position:relative;
     text-align:center;
-    padding:64px 20px 56px;
+    padding:80px 20px 70px;
     overflow:hidden;
     border-bottom:1px solid var(--card-border);
   }
   .brand .brand-bg{
     position:absolute;
     inset:0;
-    background:url("images/bg1.jpg") center / cover no-repeat;
+    background:url("images/bg1.jpg") center 15% / cover no-repeat;
     filter:brightness(0.55) saturate(1.1);
-    transform:scale(1.1);
+    transform:scale(1.05);
     animation:brand-pan 18s ease-in-out infinite alternate;
     z-index:0;
   }
   @keyframes brand-pan{
-    0%{ transform:scale(1.1) translateX(0); }
-    100%{ transform:scale(1.2) translateX(-3%); }
+    0%{ transform:scale(1.05) translateX(0); }
+    100%{ transform:scale(1.12) translateX(-2%); }
   }
   .brand::after{
     content:"";
@@ -235,7 +235,7 @@
   <div class="brand">
     <div class="brand-bg"></div>
     <h1>TimeYN2</h1>
-    <p>Tagline here</p>
+    <p>Thank You</p>
   </div>
 
   <div class="banner-list">
